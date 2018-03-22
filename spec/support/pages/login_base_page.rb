@@ -12,5 +12,5 @@ class LoginBasePage < BasePage
     self.password = password
     submit.click
     HomePage.new(browser).wait_for_loaded
-  end  
+  end
 end

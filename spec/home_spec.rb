@@ -18,9 +18,11 @@ RSpec.describe HomePage do
     end
 
     context 'when logged in' do
+      let(:user) { build(:predefined_user) }
+
       specify 'user buttons are there' do
         SignInPage.open do
-          submit_form('bwilczek@example.com', 'example')
+          submit_form(user.email, user.password)
         end
         HomePage.open do
           expect(top_menu).to be_visible

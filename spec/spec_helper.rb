@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'watir_pump'
+require_relative 'support/factory_bot'
+require_relative 'support/factories/users'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
