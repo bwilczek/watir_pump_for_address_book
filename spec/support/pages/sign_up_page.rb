@@ -2,6 +2,6 @@
 
 require_relative 'login_base_page'
 
-class SignInPage < LoginBasePage
-  uri '/sign_in'
+class SignUpPage < LoginBasePage
+  uri '/sign_up'
 end
