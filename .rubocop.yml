@@ -1,0 +1,10 @@
+AllCops:
+  TargetRubyVersion: 2.4
+Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context', 'configure']
+Metrics/LineLength:
+  Enabled: true
+  Exclude:
+    - spec/**/*
