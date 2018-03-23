@@ -22,7 +22,7 @@ RSpec.describe HomePage do
 
       specify 'user buttons are there' do
         SignInPage.open do
-          submit_form(user.email, user.password)
+          submit_form(user)
         end
         HomePage.open do
           expect(top_menu).to be_visible

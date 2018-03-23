@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 require 'watir_pump'
+require 'regexp-examples'
 require_relative 'support/factory_bot'
 require_relative 'support/factories/users'
+require_relative 'support/helpers/user'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -37,6 +39,7 @@ RSpec.configure do |config|
       c.browser.window.resize_to(1200, 800)
       c.base_url = 'http://a.testaddressbook.com'
     end
+    # UserHelper.create_suite_user
   end
 
   config.before(:each) do |example|

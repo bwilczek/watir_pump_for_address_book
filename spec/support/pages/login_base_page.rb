@@ -7,9 +7,9 @@ class LoginBasePage < BasePage
   text_field_writer :password, data_test: 'password'
   input :submit, data_test: 'submit'
 
-  def submit_form(email, password)
-    self.email = email
-    self.password = password
+  def submit_form(user)
+    self.email = user.email
+    self.password = user.password
     submit.click
     HomePage.new(browser).wait_for_loaded
   end
