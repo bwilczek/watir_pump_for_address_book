@@ -18,7 +18,7 @@ RSpec.describe HomePage do
     end
 
     context 'when logged in' do
-      let(:user) { build(:predefined_user) }
+      let(:user) { build(:user) }
 
       specify 'user buttons are there' do
         SignInPage.open do

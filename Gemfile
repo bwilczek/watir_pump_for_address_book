@@ -8,3 +8,5 @@ gem 'regexp-examples', '~> 1.4'
 gem 'rspec', '~> 3.7'
 gem 'rubocop', '~> 0.52'
 gem 'watir_pump', '~> 0.2'
+
+gem 'pry', '~> 0.11'
