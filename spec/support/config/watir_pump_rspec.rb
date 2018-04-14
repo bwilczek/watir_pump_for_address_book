@@ -5,6 +5,7 @@ require 'regexp-examples'
 
 require_relative './factory_bot_rspec'
 require_relative '../factories/users'
+require_relative '../factories/addresses'
 require_relative '../helpers/api'
 require_relative '../helpers/user'
 
