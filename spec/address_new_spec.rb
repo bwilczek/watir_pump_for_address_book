@@ -18,10 +18,14 @@ RSpec.describe AddressNewPage do
       address1.set address.address1
       address2.set address.address2
       city.set address.city
-      state.select_value address.state
+      state.select address.state
       zip_code.set address.zip_code
       self.country = address.country
+      birthday.set address.birthday
+      age.set address.age
+      website.set address.website
       # binding.pry
+      # color.set address.color
       # expect(self).to be_loaded
     end
   end

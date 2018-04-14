@@ -13,6 +13,11 @@ class AddressNewPage < BasePage
   select_list :state, id: 'address_state'
   text_field :zip_code, id: 'address_zip_code'
   radio :country, name: 'address[country]'
+  date_field :birthday, id: 'address_birthday'
+  text_field :color, id: 'address_color'
+  text_field :age, id: 'address_age'
+  text_field :website, id: 'address_website'
+
 
   def country=(_val)
     # FIXME: radio buttons for country are buggy (HTML)
