@@ -5,7 +5,10 @@ require 'regexp-examples'
 
 require_relative './factory_bot_rspec'
 require_relative '../factories/users'
+require_relative '../helpers/api'
 require_relative '../helpers/user'
+
+Api.base_url = 'http://a.testaddressbook.com'
 
 RSpec.configure do |config|
   config.define_derived_metadata(file_path: %r{/spec/}) do |meta|
@@ -18,7 +21,7 @@ RSpec.configure do |config|
     WatirPump.configure do |c|
       c.browser = Watir::Browser.new
       c.browser.window.resize_to(1200, 800)
-      c.base_url = 'http://a.testaddressbook.com'
+      c.base_url = Api.base_url
     end
 
     if ENV['TEST_USER_EMAIL']
