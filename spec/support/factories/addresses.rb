@@ -12,7 +12,7 @@ FactoryBot.define do
     country 'United States'
     birthday "#{Kernel.rand(10..28)}/#{Kernel.rand(10..12)}/#{Kernel.rand(1980..2010)}"
     color FFaker::Color.hex_code
-    age random(19..83)
+    age Kernel.rand(19..83)
     website FFaker::Internet.http_url
   end
 end

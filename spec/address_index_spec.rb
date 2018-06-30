@@ -7,7 +7,6 @@ RSpec.describe AddressIndexPage do
   let(:user) { build(:user) }
 
   before(:each) do
-    # TODO: make sure that user has two addresses
     SignInPage.open { submit_form(user) }
   end
 
