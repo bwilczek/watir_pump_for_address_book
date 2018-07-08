@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'support/pages/home_page'
-require_relative 'support/pages/sign_in_page'
-
 RSpec.describe HomePage do
   describe TopMenu do
     context 'when not logged in' do

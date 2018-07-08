@@ -14,7 +14,6 @@ RSpec.describe AddressIndexPage do
     AddressIndexPage.open do
       expect(self).to be_loaded
       expect(list.header).to be_visible
-      expect(list.items.count).to eq(2)
     end
   end
 end

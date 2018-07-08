@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'support/pages/sign_in_page'
-require_relative 'support/pages/address_new_page'
-
 RSpec.describe AddressNewPage do
   let(:user) { build(:user) }
   let(:address) { build(:address) }
@@ -12,8 +9,12 @@ RSpec.describe AddressNewPage do
   end
 
   specify 'basic flow' do
+    address_cnt = nil
+    AddressIndexPage.open { address_cnt = list.items.count }
     AddressNewPage.open do
       fill_form(address)
+      submit
     end
+    AddressIndexPage.open { expect(list.items.count).to eq(address_cnt+1) }
   end
 end

@@ -9,6 +9,8 @@ require_relative '../factories/addresses'
 require_relative '../helpers/api'
 require_relative '../helpers/user'
 
+Dir.glob("#{__dir__}/../../support/**/*.rb", &method(:require))
+
 Api.base_url = 'http://a.testaddressbook.com'
 
 RSpec.configure do |config|

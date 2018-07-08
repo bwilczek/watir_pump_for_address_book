@@ -14,6 +14,7 @@ class AddressNewPage < BasePage
   text_field_writer :zip_code, id: 'address_zip_code'
   text_field_writer :age, id: 'address_age'
   text_field_writer :website, id: 'address_website'
+  button_clicker :submit, text: 'Create Address'
   # custom writers
   radio_writer :country
   text_field_writer :birthday
