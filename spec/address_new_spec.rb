@@ -11,10 +11,7 @@ RSpec.describe AddressNewPage do
   specify 'basic flow' do
     address_cnt = nil
     AddressIndexPage.open { address_cnt = list.items.count }
-    AddressNewPage.open do
-      fill_form(address)
-      submit
-    end
+    AddressNewPage.open { fill_form!(address) }
     AddressIndexPage.open { expect(list.items.count).to eq(address_cnt+1) }
   end
 end

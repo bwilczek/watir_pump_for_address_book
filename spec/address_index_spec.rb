@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'support/pages/sign_in_page'
-require_relative 'support/pages/address_index_page'
-
 RSpec.describe AddressIndexPage do
   let(:user) { build(:user) }
 
