@@ -18,10 +18,8 @@ RSpec.describe HomePage do
       let(:user) { build(:user) }
 
       specify 'user buttons are there' do
-        SignInPage.open do
-          submit_form(user)
-        end
-        HomePage.open do
+        SignInPage.open { fill_form!(user) }
+        HomePage.use do
           expect(top_menu).to be_visible
           expect(top_menu.home_link).to be_visible
           expect(top_menu.sign_in_link).not_to be_present
