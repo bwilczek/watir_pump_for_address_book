@@ -9,5 +9,10 @@ class AddressListItem < WatirPump::Component
   td_reader :state, -> { root.tds[3] }
   link_clicker :show, -> { root.link(text: 'Show') }
   link_clicker :edit, -> { root.link(text: 'Edit') }
-  link_clicker :destroy, -> { root.link(text: 'Destroy') }
+  link_clicker :destroy
+
+  def destroy
+    root.link(text: 'Destroy').click
+    browser.alert.ok
+  end
 end

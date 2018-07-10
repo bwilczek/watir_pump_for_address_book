@@ -4,7 +4,7 @@ RSpec.describe AddressIndexPage do
   let(:user) { build(:user) }
 
   before(:each) do
-    SignInPage.open { submit_form(user) }
+    SignInPage.open { fill_form!(user) }
   end
 
   specify 'basic flow' do
