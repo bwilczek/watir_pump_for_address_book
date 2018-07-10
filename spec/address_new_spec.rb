@@ -23,6 +23,6 @@ RSpec.describe AddressNewPage do
     AddressNewPage.open { fill_form!(address) }
     AddressIndexPage.open { list.items[address.last_name].show }
     AddressShowPage.use { expect(form_data).to eq address.to_h }
-    # TODO: delete the address
+    # TODO: delete the address via API call
   end
 end

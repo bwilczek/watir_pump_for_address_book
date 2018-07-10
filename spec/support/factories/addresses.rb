@@ -10,7 +10,7 @@ FactoryBot.define do
     state FFaker::AddressUS.state_abbr
     zip_code FFaker::AddressUS.zip_code
     country 'United States'
-    birthday "#{Kernel.rand(10..28)}/#{Kernel.rand(10..12)}/#{Kernel.rand(1980..2010)}"
+    birthday "#{Kernel.rand(13..28)}/#{Kernel.rand(10..12)}/#{Kernel.rand(1980..2010)}"
     color FFaker::Color.hex_code
     age Kernel.rand(19..83)
     website FFaker::Internet.http_url

@@ -20,15 +20,15 @@ class AddressNewPage < BasePage
   text_field_writer :birthday
   text_field_writer :color
 
-  def country=(_c)
+  def country=(_country)
     root.input(id: 'address_country_true').click
   end
 
-  def birthday=(b)
-    root.date_field(id: 'address_birthday').set b
+  def birthday=(birthday)
+    root.date_field(id: 'address_birthday').set birthday
   end
 
-  def color=(c)
-    browser.execute_script "$('#address_color').val('##{c}')"
+  def color=(color)
+    browser.execute_script "$('#address_color').val('##{color}')"
   end
 end
