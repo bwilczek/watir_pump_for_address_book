@@ -15,4 +15,8 @@ class AddressListItem < WatirPump::Component
     root.link(text: 'Destroy').click
     browser.alert.ok
   end
+
+  def id
+    root.link(text: 'Show').attribute('href').gsub(/\D/, '').to_i
+  end
 end

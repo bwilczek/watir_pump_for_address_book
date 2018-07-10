@@ -20,17 +20,28 @@ module Api
       end
     end
 
+    def create_address(address)
+      raise 'Need to login first' unless @current_user
+      conn.post do |req|
+        req.url '/addresses.json'
+        req.headers['Content-Type'] = 'application/json'
+        req.body = address.to_h.to_json
+      end
+    end
+
     def login(user)
       token = authenticity_token('/sign_in')
-      conn.post do |req|
+      response = conn.post do |req|
         req.url '/session'
         req.params['authenticity_token'] = token
         req.params['session[email]'] = user.email
         req.params['session[password]'] = user.password
       end
+      @current_user = user if response.status < 400
     end
 
     def addresses
+      raise 'Need to login first' unless @current_user
       JSON.parse(conn.get('/addresses.json').body)
     end
 

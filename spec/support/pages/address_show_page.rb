@@ -54,10 +54,11 @@ class AddressShowPage < BasePage
   end
 
   def rgb2hex(rgb)
+    return '' if rgb.nil?
     r, g, b = rgb.split(',')
     r.gsub!(/\D/, '').to_i
     g.gsub!(/\D/, '').to_i
     b.gsub!(/\D/, '').to_i
-    format('%2x%2x%2x', r, g, b)
+    format('#%02x%02x%02x', r, g, b)
   end
 end

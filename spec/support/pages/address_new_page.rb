@@ -29,6 +29,6 @@ class AddressNewPage < BasePage
   end
 
   def color=(color)
-    browser.execute_script "$('#address_color').val('##{color}')"
+    browser.execute_script "$('#address_color').val('#{color}')"
   end
 end
