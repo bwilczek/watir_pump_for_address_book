@@ -20,7 +20,7 @@ class AddressNewPage < BasePage
   text_field_writer :birthday
   text_field_writer :color
 
-  def country=(c)
+  def country=(_c)
     root.input(id: 'address_country_true').click
   end
 
