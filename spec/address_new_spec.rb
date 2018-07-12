@@ -18,13 +18,4 @@ RSpec.describe AddressNewPage do
       expect(list.items.count).to eq(address_cnt)
     end
   end
-
-  specify 'basic flow with showing' do
-    # TODO: move API calls to before block
-    Api.login(user)
-    Api.create_address(address)
-    AddressIndexPage.open { list.items[address.last_name].show }
-    AddressShowPage.use { expect(form_data).to eq address.to_h }
-    # TODO: delete the address via API call
-  end
 end

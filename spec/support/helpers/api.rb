@@ -22,11 +22,21 @@ module Api
 
     def create_address(address)
       raise 'Need to login first' unless @current_user
-      conn.post do |req|
+      response = conn.post do |req|
         req.url '/addresses.json'
         req.headers['Content-Type'] = 'application/json'
         req.body = address.to_h.to_json
       end
+      @last_address_id = JSON.parse(response.body)['id'].to_i
+    end
+
+    def delete_last_address
+      raise 'Need to login first' unless @current_user
+      response = conn.delete do |req|
+        req.url "/addresses/#{@last_address_id}"
+        req.headers['Content-Type'] = 'application/json'
+      end
+      @last_address_id = nil
     end
 
     def login(user)
